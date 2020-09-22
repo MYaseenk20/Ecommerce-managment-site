@@ -1,0 +1,10 @@
+{%  extends 'content/main.html' %}
+
+{% block content %}
+  <form action="{% url 'deleteorder' item.id %}" method="post">
+    {% csrf_token %}
+    <p>Are your sure You Want To {{item}}</p>
+    <input type="submit" value="delete">
+
+</form>
+{% endblock %}

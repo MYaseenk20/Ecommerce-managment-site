@@ -104,7 +104,9 @@ def customer(request,pk):
 @login_required(login_url='login')
 @allowed_user(allowed_roles=['admin'])
 def product(request):
-    return render (request,'content/product.html')
+    products=Product.objects.all()
+    context={'products':products}
+    return render (request,'content/product.html',context)
 
 @login_required(login_url='login')
 @allowed_user(allowed_roles=['admin'])

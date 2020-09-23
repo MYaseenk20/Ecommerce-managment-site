@@ -28,6 +28,7 @@ class Product(models.Model):
     name=models.CharField(max_length=200,null=True)
     category=models.CharField(max_length=200,null=True,choices=CATEGORY)
     tag=models.ManyToManyField(Tag,max_length=200,null=True)
+    price=models.CharField(max_length=200,null=True,blank=True)
     def __str__(self):
         return self.name
 class Order(models.Model):

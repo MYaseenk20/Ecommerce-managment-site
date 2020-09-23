@@ -2,25 +2,34 @@
 
 {% block content %}
 
-		<br>
 
-		<div class="row">
-			<div class="col-md">
-				<div class="card card-body">
-					<h5>Products</h5>
-				</div>
-				<div class="card card-body">
-					<table class="table">
-						<tr>
-							<th>Product</th>
-							<th>Category</th>
-							<th>Price</th>
-						</tr>
-						
-					</table>
-				</div>
-			</div>
-			
-		</div>
+
+<div class="container-fuild">
+    <div class="border rounded p-4 m-4">
+        <table class="table">
+        <p class="display-4 pl-4 ml-4">Your Products</p>
+        <hr>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td scope="row">{{product.name}}</td>
+                    <td scope="row">{{product.category}}</td>
+                    <td>{{product.price}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
 
 {% endblock content %}
